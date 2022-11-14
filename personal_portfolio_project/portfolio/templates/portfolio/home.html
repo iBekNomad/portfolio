@@ -1,0 +1,43 @@
+{% extends 'portfolio/base.html' %}
+{% block content %}
+    {% load static %}
+    <header class="main-header">
+        <div class="layers">
+            <div class="layer_header">
+                <div class="layers_camption">Welcome to my Portfolio</div>
+                <div class="layers_title">Taipan</div>
+            </div>
+            <div class="layer layers_base" style="background-image: url(../../static/portfolio/background.png);"></div>
+            <!-- <div class="layer layers_middle" style="background-image: url(../../static/portfolio/layer-front2.png);"></div> -->
+            <div class="layer layers_front" style="background-image: url(../../static/portfolio/s_eyes1.png);"></div>
+        </div>
+    </header>
+    <article class="main-article" style="background-image: url(../../static/portfolio/back2.jpg);">
+        <div class="main-article_content">
+            
+            <h1 class="main-article_header">my projects</h1>
+            <div class="main-article_paragraph">
+                <div class="row row-cols-1 row-cols-md-2 g-4">
+                    {% for project in projects %}
+                    <div class="col">
+                        <div class="card bg-dark">
+                        <img src="{{ project.image.url }}" alt="" class="card-img-top">
+                        <div class="card-body">
+                            <h3 class="card-title">{{ project.title }}</h3>
+                            <p class="card-text">{{ project.description }}</p>
+                        </div>
+                        {% if project.url %}
+                        <div class="card-footer bg-dark">
+                            <a href="{{ project.url }}"><button class="btn-t">Link</button></a>
+                        </div>
+                        {% endif %}
+                        </div>
+                    </div>
+                    {% endfor%}
+                </div>
+            </div>
+        </div>
+    </article>
+    
+   
+{% endblock %}

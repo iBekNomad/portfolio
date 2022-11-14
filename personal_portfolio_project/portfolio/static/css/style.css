@@ -1,0 +1,72 @@
+.btn-t {
+  position: relative;
+  background-color: transparent;
+  color: #fff;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-radius: 50px;
+  width: 180px;
+  height: 50px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.btn-t:first-child:hover {
+  background: linear-gradient(90deg, #07a7f1, #fa46ac, #fae736, #07a7f1);
+  background-size: 400%;
+}
+
+.btn-t:last-child:hover {
+  background:linear-gradient(90deg, #07a7f1, #fa46ac, #fae736, #07a7f1);
+  background-size: 400%;
+}
+
+.btn-t:first-child:before,
+.btn-t:last-child:before {
+  content:  '';
+  position: relative;
+  background: inherit;
+  top: -5px;
+  right: -5px;
+  bottom: -5px;
+  left: -5px;
+  border-radius: 50px;
+  filter: blur(20px);
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.btn-t:hover {
+  z-index: 1;
+  animation: glow 8s linear infinite;
+}
+
+@keyframes glow {
+    0% {
+      background-position: 0%;
+    }
+    100% {
+      background-position: 400%;
+    }
+}
+
+
+.font-size-big {
+  font-size: 80px;
+}
+
+.bg-lightgr {
+  background-color: #EBF5CB;
+}
+
+.bg-darkgr {
+  background-color: #030637;
+}
+
+.no-line {
+  text-decoration: none;
+}
+
